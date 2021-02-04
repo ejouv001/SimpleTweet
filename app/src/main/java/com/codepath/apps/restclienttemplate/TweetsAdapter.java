@@ -20,7 +20,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
     List<Tweet> tweets;
 
     // Pass in the context and list of tweets
-    public TweetsAdapter(Context context , List<Tweet> tweets) {
+    public TweetsAdapter(Context context, List<Tweet> tweets) {
         this.context = context;
         this.tweets = tweets;
     }
@@ -43,8 +43,18 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
     }
 
     @Override
-    public int getItemCount() {
-        return tweets.size();
+    public int getItemCount() {return tweets.size();}
+
+    // Clean all elements of the recycler
+    public void clear() {
+        tweets.clear();
+        notifyDataSetChanged();
+    }
+
+    // Add a list of items
+    public void addAll(List<Tweet> tweetList) {
+        tweets.addAll(tweetList);
+        notifyDataSetChanged();
     }
 
     // Define a ViewHolder
