@@ -77,7 +77,8 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
         public void bind(Tweet tweet) {
             tvBody.setText(tweet.body);
             tvScreenName.setText(tweet.user.screenName);
-            tvTime.setText(tweet.getFormattedTimeStamp(tweet.createdAt));
+            //tvTime.setText("shows up?");
+            tvTime.setText(Tweet.getFormattedTimeStamp(tweet.createdAt));
             Glide.with(context).load(tweet.user.profileImageUrl).into(ivProfileImage);
         }
     }
